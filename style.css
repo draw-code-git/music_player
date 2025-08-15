@@ -109,10 +109,10 @@ html, body {
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
-  border-radius: 22px;  /* Outer radius */
+  border-radius: 20px;  /* Outer radius */
   animation: spin 2s linear infinite; /* Your animation code is perfect */
   z-index: -1; /* Pushes it behind the button */
-  padding: 3px;
+  padding: 2px;
 }
 
 .box::before{
