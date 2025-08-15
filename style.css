@@ -1,0 +1,222 @@
+
+html { font-size: 16px; }
+
+
+
+body{
+  margin: 0;
+ padding: 0;
+ height: 100vh;
+
+}
+
+.container{
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;  
+
+}
+
+
+
+.buttons{
+
+  font-weight: bold;
+/* backdrop-filter: blur(10px); */
+/* background: rgba(255,255,255,0.1); */
+background: black;
+text-shadow: 0 1px 2px rgba(0,0,0,1);
+  padding: 8px;
+  /* margin: 40px; */
+  width: 120px;
+  position: relative;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  /* transition: transform 0.15s; */
+
+}
+
+
+.buttons:hover{
+cursor: pointer;
+/* transform: scale(1.05); */
+
+}
+
+.active{
+
+background: conic-gradient( #f12049, #8929ff, #fecc59, rgb(255, 123, 0), #f12049);
+}
+
+
+
+.bg-video{
+  position: absolute;
+  /* just position absolute wont change anything if you dont move the element using top and left */
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+z-index: -2;}
+
+.vid{
+
+position: absolute;
+width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+html, body {
+  overflow: hidden;
+}
+
+.box{
+  position: relative;
+  margin: 50px;
+  border: none;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+@keyframes spin {
+
+  from{
+    --angle:0deg;
+  }
+
+  to{
+
+    --angle:360deg;
+  }
+  
+}
+
+.box::after , .box::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(from var(--angle), #f12049, #8929ff, #fecc59, rgb(255, 123, 0), #f12049);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 22px;  /* Outer radius */
+  animation: spin 2s linear infinite; /* Your animation code is perfect */
+  z-index: -1; /* Pushes it behind the button */
+  padding: 3px;
+}
+
+.box::before{
+
+  filter: blur(5px);
+}
+
+.music-player{
+  display: flex;
+  position: relative;
+  width: 250px;
+  height: 100px;
+   background: rgba(255, 255, 255, 0.05); /* semi-transparent white */
+  backdrop-filter: blur(30px); /* blurs what's behind it */
+  border-radius: 20px; /* rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border to define edges */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* soft shadow for depth */
+justify-content: center;
+
+
+}
+
+.player{
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+}
+
+
+#play{
+position: absolute;
+bottom: 0%;
+margin-bottom: 10px;
+cursor: pointer;
+}
+
+#back{
+
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  margin-bottom: 10px;
+  margin-left: 55px;
+  cursor: pointer;
+}
+
+#next{
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  margin-bottom: 10px;
+margin-right: 55px;
+cursor: pointer;
+}
+
+#pause{
+position: absolute;
+bottom: 0%;
+margin-bottom: 10px;
+cursor: pointer;
+}
+
+.hide{
+  display: none !important;
+}
+
+.marquee{
+width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+box-sizing: border-box;
+
+}
+
+#song-name{
+font-weight: bold;
+  display: inline-block;
+padding-left: 100%;
+animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+
+  0%  { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+  
+}
+
+#twitter{
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  margin-right: 60px;
+  margin-top:20px;
+
+}
+
+#mail{
+
+  cursor: pointer;
+  position: absolute;
+ top: 0%;
+  right: 0%;
+  margin: 10px;
+margin-top: 20px;
+}
