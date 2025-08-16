@@ -71,7 +71,7 @@ function updateName(){
 
 
 // NAME=path.split("/").pop();
-audio.load();
+// audio.load(); // not loading 
 // Play/pause toggle
 function toggle() {
     if(audio.paused){
